@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        KS_VERSION = '6.2.1'
+        KS_VERSION = '6.3.0.rc3'
     }
 
     stages {
@@ -34,8 +34,8 @@ pipeline {
                         sh '''
                             ./build/tag.sh $KS_VERSION
                             ./build/push.sh $KS_VERSION
-                            ./build/tag.sh latest
-                            ./build/push.sh latest
+                            // ./build/tag.sh latest
+                            // ./build/push.sh latest
                         '''
                     }
                 }
