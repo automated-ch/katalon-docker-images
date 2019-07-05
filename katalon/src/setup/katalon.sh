@@ -5,13 +5,12 @@ set -xe
 echo "Install Katalon"
 
 version=$KATALON_STUDIO_VERSION
-directory=$version
-package=Katalon_Studio_Linux_64-$version.tar.gz
-unzipped_directory=Katalon_Studio_Linux_64-$version
-
 numbers=($(echo "$version" | tr '.' '\n'))
 main_version=${numbers[0]}.${numbers[1]}.${numbers[2]}
 
+directory=$version
+package=Katalon_Studio_Linux_64-$version.tar.gz
+unzipped_directory=Katalon_Studio_Linux_64-$main_version
 
 wget -O $package https://github.com/katalon-studio/katalon-studio/releases/download/v$version/Katalon_Studio_Linux_64-$main_version.tar.gz
 ls
