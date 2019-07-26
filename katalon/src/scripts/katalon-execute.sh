@@ -63,6 +63,13 @@ cd $workspace_dir
 xvfb-run -s "-screen 0 $DISPLAY_CONFIGURATION" "${args[@]}"
 ret_code=$?
 
+# copy current report from timestamped directory to report root directory
+# this makes automatic processing of the reports easier 
+# since one does not need to figure out report timestamp
+cd $report_dir
+cp * ../
+cd $workspace_dir
+
 #clean up
 
 chown -R $(id -u):$(id -g) $report_dir
