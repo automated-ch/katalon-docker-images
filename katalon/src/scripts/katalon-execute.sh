@@ -67,7 +67,11 @@ ret_code=$?
 # this makes automatic processing of the reports easier 
 # since one does not need to figure out report timestamp
 cd $report_dir
+
+#find latest changed folder and copy content report to report root
+cd $(ls -td -- */ | head -n 1 | cut -d'/' -f1)
 cp * ../
+
 cd $workspace_dir
 
 #clean up
