@@ -69,8 +69,9 @@ ret_code=$?
 cd $report_dir
 
 #find latest changed folder and copy content report to report root
-cd $(ls -td -- "*/" | head -n 1 | cut -d'"/"' -f1)
-cp "./*" "../"
+latest_report_dir=$( ls -td -- */ | head -n 1 | cut -d'/' -f1)
+pwd
+#cp "./*" "../"
 
 cd $workspace_dir
 
