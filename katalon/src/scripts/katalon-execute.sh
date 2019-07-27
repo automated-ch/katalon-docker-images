@@ -70,7 +70,7 @@ cd $report_dir
 
 #find latest changed folder and copy content report to report root
 cd $(ls -td -- */ | head -n 1 | cut -d'/' -f1)
-cp * ../
+cp ./* ../
 
 cd $workspace_dir
 
